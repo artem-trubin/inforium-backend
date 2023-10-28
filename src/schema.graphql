@@ -1,0 +1,15 @@
+type Note {
+  text: String!
+  id: ID!
+}
+
+type Query {
+  noteCount: Int!
+  allNotes: [Note!]!
+  findNote(id: String!): Note
+}
+
+type Mutation {
+  addNote(text: String!): Note
+  editNote(id: String!, text: String!): Note
+}
