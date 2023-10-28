@@ -5,7 +5,7 @@ const config = {
     schema: "src/schema.graphql",
     generates: {
         "src/generated/graphql.ts": {
-            plugins: ["typescript", "typescript-resolvers", "typescript-mongodb"]
+            plugins: ["typescript", "typescript-resolvers"]
         }
     }
 };

@@ -9,9 +9,9 @@ import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { readFileSync } from 'fs';
 
-import { Resolvers } from './generated/graphql';
+import { Resolvers, Note } from './generated/graphql';
 
-let notes = [
+let notes : Array<Note> = [
   {
     text: "This is a super note",
     id: "1"
@@ -32,8 +32,11 @@ const resolvers: Resolvers = {
   Query: {
     noteCount: () => notes.length,
     allNotes: () => notes,
-    // TODO: fix this
-    // findNote: (_, { id }) => notes.find(n => n.id === id),
+    findNote: (_, { id }) => {
+      const note = notes.find(n => n.id === id);
+      if (!note) return null;
+      return note;
+    },
   },
 
   Mutation: {

@@ -26,8 +26,12 @@ const resolvers = {
     Query: {
         noteCount: () => notes.length,
         allNotes: () => notes,
-        // TODO: fix this
-        // findNote: (_, { id }) => notes.find(n => n.id === id),
+        findNote: (_, { id }) => {
+            const note = notes.find(n => n.id === id);
+            if (!note)
+                return null;
+            return note;
+        },
     },
     Mutation: {
         addNote: (_, args) => {

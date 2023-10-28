@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node build/src/index.js",
     "dev": "ts-node-dev src/index.ts",
-    "tsc": "tsc",
+    "build": "tsc",
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "author": "",
@@ -20,7 +20,6 @@
   "devDependencies": {
     "@graphql-codegen/cli": "5.0.0",
     "@graphql-codegen/typescript": "4.0.1",
-    "@graphql-codegen/typescript-mongodb": "3.0.0",
     "@graphql-codegen/typescript-resolvers": "4.0.1",
     "@types/node": "^20.8.9",
     "@types/uuid": "^9.0.6",
