@@ -1,10 +1,4 @@
-// const { v: uuid } = require('uuid');
-
 import { v4 as uuid } from 'uuid';
-
-// const { ApolloServer } = require('@apollo/server');
-// const { startStandaloneServer } = require('@apollo/server/standalone');
-
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { readFileSync } from 'fs';
@@ -65,7 +59,7 @@ const server = new ApolloServer<MyContext>({
 });
 
 startStandaloneServer(server, {
-  listen: { port: 4000 },
+  listen: { port: 3000 },
 })
   .then(({ url }) => {
     console.log(`Server ready at ${url}`);
